@@ -1,0 +1,140 @@
+body { padding-top: 70px; }
+            .divRules{
+                float:left;
+                width:20%;
+                text-align:left;
+                font-size:20px;
+            }
+            #prevNum{
+                font-size:90px;
+                color:#f00;
+            }
+            .bingoNumberDesc{
+                font-size:0.3em;
+                vertical-align: text-top;
+            }
+           div {
+                text-align: center;
+            } 
+            .bigNumberDisplay {
+                font-size: 8em;
+            } 
+            .numbersTable {
+                font-size: 1.6em;
+                width:100%
+            } 
+            table {
+                margin-left: auto;
+                margin-right: auto;
+            } 
+            table, tr, td {
+                border-collapse: collapse;
+                border: solid 1px #999;
+            } 
+            td {
+                min-width: 100px;
+                color: #fff;
+                font-size: 2em;
+            } 
+            td.selected {
+                color: #0D8930;
+            }
+.border{
+    width: 800px;
+    height: 500px;
+    background-color: rgba(255, 166, 0, 0.884);
+    margin-left: 450px;
+    margin-top: 100px;
+    border-radius: 40px;   
+}
+.logo{
+    position: absolute;
+    top: 250px;
+    left: 85px;
+}
+.create{
+    font-size: 30px;
+    padding-left: 330px;
+    padding-top: 100px;
+}
+#generate{
+    margin-left: 20px;
+    
+}
+.join{
+    font-size: 30px;
+    padding-left: 350px;
+    padding-top: 50px;
+}
+.welcome{
+    font-size: 40px;
+    padding-top: 50px;
+    padding-left: 100px;
+}
+.chatbox{
+    background-color: #555;
+  color: white;
+
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  width: 80px;
+
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}

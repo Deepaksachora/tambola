@@ -1,0 +1,209 @@
+<html> 
+    <head>
+        <title>
+            Sarvika Tambola Game
+        </title>   
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Online free Tambola Game" /> 
+        <meta property="og:description" content="Online free Tambola Game" />
+        <meta property="article:published_time" content="2017-09-22T22:16:24+00:00" />
+        <meta property="article:modified_time" content="2017-09-22T22:29:25+00:00" />
+        <meta property="og:site_name" content="All about Web and Cloud" />
+        <meta property="og:locale" content="en_US" />
+        <!-- <meta name="twitter:site" content="@JitendraZaa" />  -->
+        <meta name="twitter:card" content="summary_large_image" /> 
+    </head>
+    <body>  
+        <nav class="navbar navbar-default navbar-fixed-top ">
+          <div class="container">
+            <div>
+                <img src="{{url_for('static', filename='image/logo.png')}}">
+            </div>
+          </div>
+        </nav>
+        <div class="container" > 
+            <div class="bigNumberDisplay well well-lg">
+                <span id="numCounter" style="color:#194BB3">0</span>
+                <span class="mirage" id="mirageElement">19</span>
+                <div class="bingoNumberDesc" id="bingoWords"></div>
+            </div>
+            <!-- <div>
+                <input id="btnGenerate" onclick="" type="button" value="Generate Number"/>
+            </div>  -->
+            <br/> 
+            <div class="row"> 
+                <div class="col-md-2 well well-lg text-left">
+                        <div style="text-align: center;"><b>Prizes</b></div>
+                        <ol>
+                            <li>Corner</li>
+                            <li>Temperature</li>
+                            <li>Younger</li>
+                            <li>Older</li>
+                            <li>First Line</li>
+                            <li>Second Line</li>
+                            <li>Third Line</li>
+                            <li>Full House</li>
+                        </ol>
+                        <div style="padding-top: 10px;">Previous No.</div>
+                    <div id="prevNum" >  0   </div>
+                </div>
+                <div  class="col-md-10"> 
+                    <form action="/" method="POST" >
+                    <table>
+                        <tr style="text-align: center;" > <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr style="text-align: center;"> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr style="text-align: center;"> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr style="text-align: center;"> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr style="text-align: center;"> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr style="text-align: center;"> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr style="text-align: center;">  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr style="text-align: center;"> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr style="text-align: center;"> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+                        <tr style="text-align: center;"> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr> 
+                    </table>
+                    </form>
+                </div>
+            </div> 
+            <br/> 
+        </div>
+
+        <script type="text/javascript">
+        var bingoNumberWords = [""];
+            (function($){
+                $.fn.extend({
+                    numAnim: function(options) {
+                        if ( ! this.length)
+                            return false;
+                        
+                        this.defaults = {
+                            endAt: 2560,
+                            numClass: 'autogen-num',
+                            duration: 2,   // seconds
+                            interval: 90  // ms
+                        };
+                        var settings = $.extend({}, this.defaults, options);
+
+                        var $num = $('<span/>', {
+                            'class': settings.numClass 
+                        });
+
+                        return this.each(function() {
+                            var $this = $(this);
+
+                            // Wrap each number in a tag.
+                            var frag = document.createDocumentFragment(),
+                                numLen = settings.endAt.toString().length;
+                            for (x = 0; x < numLen; x++) {
+                                var rand_num = Math.floor( Math.random() * 10 );
+                                frag.appendChild( $num.clone().text(rand_num)[0] )
+                            }
+                            $this.empty().append(frag);
+
+                            var get_next_num = function(num) {
+                                ++num;
+                                if (num > 9) return 0;
+                                return num;
+                            };
+
+                            // Iterate each number.
+                            $this.find('.' + settings.numClass).each(function() {
+                                var $num = $(this),
+                                    num = parseInt( $num.text() );
+
+                                var interval = setInterval( function() {
+                                    num = get_next_num(num);
+                                    $num.text(num);
+                                }, settings.interval);
+
+                                setTimeout( function() {
+                                    clearInterval(interval);
+                                }, settings.duration * 1000 - settings.interval);
+                            });
+                            
+                            setTimeout( function() {
+                                $this.text( settings.endAt.toString() );
+                                $("#mirageElement").css("display","none");
+                                $('#numCounter').css("display","");  
+
+                            }, settings.duration * 1000);
+                        });
+                    }
+                });
+            })(jQuery);
+
+                $(function() { 
+                var bingo = {
+                    selectedNumbers: [],
+                    generateRandom: function() {
+                        var min = 1;
+                        var max = 90;
+                        var random = Math.floor(Math.random() * (max - min + 1)) + min;
+                        return random;
+                    },
+                    generateNextRandom: function() {
+                        if (bingo.selectedNumbers.length > 89) {
+                            alert("All numbers Exhausted");
+                            return 0;
+                        }
+                        var random = bingo.generateRandom();
+                        while ($.inArray(random, bingo.selectedNumbers) > -1) {
+                            random = bingo.generateRandom();
+                        }
+                        bingo.selectedNumbers.push(random);
+                        return random;
+                    }
+                };
+                $("#mirageElement").css("display","none");
+                $('td').each(function() {
+                    var concatClass = this.cellIndex + "" + this.parentNode.rowIndex;
+                    var numberString = parseInt(concatClass, 10).toString();
+                    $(this).addClass("cell" + numberString).text(numberString);
+                });
+                var random = 0;
+                var animDuration = 2;
+                $('#btnGenerate').click(function() {    
+                    $('#prevNum').text($('#numCounter').text());
+                    random = bingo.generateNextRandom().toString();
+                    $("#numCounter").css("display","none");
+                    $("#mirageElement").css("display","");
+                    $('#numCounter').text(random);
+                    //$('td.cell' + random).addClass('selected');
+                    $("#mirageElement").numAnim({
+                        endAt: 90,
+                        duration: animDuration
+                    });
+                    setTimeout(function(){ 
+                        if(bingoNumberWords[random-1]){
+                            $("#bingoWords").text(bingoNumberWords[random-1]);
+                        }else{
+                            $("#bingoWords").text("");
+                        }
+                        $('td.cell' + random).addClass('selected');
+                        $("#numCounter").animate({zoom: '150%'}, "slow");
+                        $("#numCounter").animate({zoom: '100%'}, "slow");
+
+                        }, animDuration*1000);
+
+                });
+                window.onbeforeunload = function(e) {
+                    e = e || window.event;
+                    var returnString = 'Are you sure?';
+                    if (e) {
+                        e.returnValue = returnString;
+                    }
+                    return returnString;
+                };
+            });
+
+        </script> 
+
+    </body>
+</html>

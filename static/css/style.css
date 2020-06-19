@@ -1,4 +1,7 @@
-body { padding-top: 70px; }
+body { 
+  padding-top: 70px;
+  background-image: url('/static/image/Internal-Page-background.png');
+}
             .divRules{
                 float:left;
                 width:20%;
@@ -6,18 +9,28 @@ body { padding-top: 70px; }
                 font-size:20px;
             }
             #prevNum{
-                font-size:90px;
-                color:#f00;
+                font-size:.7em;
+                color:#c59c0c;
+
+            }
+            .previousNo{
+                position: absolute;
+                top: 513px;
+                left: 44px;
+
             }
             .bingoNumberDesc{
-                font-size:0.3em;
+                font-size:9em;
                 vertical-align: text-top;
+                color: #c59c0c;
             }
            div {
                 text-align: center;
             } 
             .bigNumberDisplay {
-                font-size: 8em;
+                position: absolute;
+                top: 504px;
+                left: 523px;
             } 
             .numbersTable {
                 font-size: 1.6em;
@@ -26,13 +39,19 @@ body { padding-top: 70px; }
             table {
                 margin-left: auto;
                 margin-right: auto;
+                position: absolute;
+                left: 600px;
             } 
             table, tr, td {
                 border-collapse: collapse;
                 border: solid 1px #999;
+                background-color: #ffb63f;
+                text-align: center;
+                font-weight: bold; 
             } 
             td {
-                min-width: 100px;
+                min-width: 70px;
+                min-height: 30px;
                 color: #fff;
                 font-size: 2em;
             } 
@@ -72,9 +91,8 @@ body { padding-top: 70px; }
     padding-left: 100px;
 }
 .chatbox{
-    background-color: #555;
+  background-color: #555;
   color: white;
-
   border: none;
   cursor: pointer;
   opacity: 0.8;
@@ -85,10 +103,11 @@ body { padding-top: 70px; }
 
 /* The popup chat - hidden by default */
 .chat-popup {
+  width: 300px;
+  height: 470px;
   display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
+  position: absolute;
+  left: -75px;
   border: 3px solid #f1f1f1;
   z-index: 9;
 }

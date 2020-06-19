@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 flask = "*"
 flask-socketio = "*"
+numpy = "*"
 
 [requires]
 python_version = "2.7"

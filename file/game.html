@@ -30,196 +30,190 @@
 
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top ">
-    <div class="container">
-        <div>
-            <img src="{{url_for('static', filename='image/logo.png')}}">
-        </div>
-    </div>
-</nav>
 
 <div class="container">
-    <div class="bigNumberDisplay well well-lg">
-        <span id="numCounter" style="color:#194BB3">0</span>
-        <span class="mirage" id="mirageElement">19</span>
-        <div class="bingoNumberDesc" id="bingoWords"></div>
+    <div class="bigNumberDisplay">
+        <span class="mirage" id="mirageElement">X</span>
+        <div class="bingoNumberDesc" id="bingoWords">0
+        </div>
+        <div style="font-size: 20px;">Current No.</div>
     </div>
     <!-- Chatbox button -->
-    <div style="margin-left: 1220px;">
-        <button class="open-button" onclick="openForm()">Chat</button>
+    <div style="position: absolute; right: 1300px; top: 30px;">
+        <img class="open-button" onclick="openForm()" src="{{ url_for('static', filename='image/chat-button.png') }}"> 
 
         <div class="chat-popup" id="myForm">
             <form class="form-container">
                 <h1>Chat</h1>
 
-                <label for="msg"><b>Message</b></label>
-                <textarea placeholder="Type message.." name="msg" required id="chatarea"></textarea>
+                <label><b>Message</b></label>
+                <textarea placeholder="Type message.." name="msg" required id="chatarea">
+                   
+                </textarea>
 
-                <button type="submit" id="btnsend" class="btn">Send</button>
+                <button type="submit" id="sendbutton" class="btn">Send</button>
                 <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
             </form>
         </div>
 
     </div>
     <!-- Chatbox button close -->
-    <div>
-        <input id="btnGenerate" onclick="" type="button" value="Generate Number"/>
+    <!-- tambola logo -->
+        <img src="/static/image/logo-small.png" width="400px" style="position: absolute; left: 136px; top: 178px;">
+    <!-- tambola logo end -->
+    <div id="button-container" style="position: absolute; left: 218px; top: 438px;" >
     </div>
     <br/>
 
     <div class="row">
-        <div class="col-md-2 well well-lg text-left">
-            <div style="text-align: center;"><b>Prizes</b></div>
-            <ol>
-                <li>Corner</li>
-                <li>Temperature</li>
-                <li>Younger</li>
-                <li>Older</li>
-                <li>First Line</li>
-                <li>Second Line</li>
-                <li>Third Line</li>
-                <li>Full House</li>
-            </ol>
-            <div style="padding-top: 10px;">Previous No.</div>
-            <div id="prevNum"> 0</div>
+        <div class="previousNo">
+            <div id="prevNum" style="font-size: 8em;">0</div>
+            <div style="padding-top: 10px; font-size: 20px;">Previous No.</div>
         </div>
         <div class="col-md-10">
-            <form action="/" method="POST">
-                <table>
-                    <tr style="text-align: center;">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+            <table>
+                <tr style="text-align: center;">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                </tr>
+                <tr style="text-align: center;">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                </tr>
+                <tr style="text-align: center;">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                </tr>
+                <tr style="text-align: center;">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                </tr>
+                <tr style="text-align: center;">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                </tr>
+                <tr style="text-align: center;">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                </tr>
+                <tr style="text-align: center;">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                </tr>
+                <tr style="text-align: center;">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                </tr>
+                <tr style="text-align: center;">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <form>
+
+                <span style="background-image: url(/static/image/ticket_bg.jpg); width: 600px; height: 170px; background-size: cover; position: absolute; top: 400px; left: 650;"></span>
+                <div style="position: absolute;top: 406px;color: white;left: 678px;">
+                <div >YOUR TICKET</div>
+                <div style="border-bottom-style: dotted;width: 550;padding-top: 8px;"></div>
+                </div>
+                <table id="tambola_tickets" style="position: absolute; top: 455px; left: 668px; min-width: 20px;">
+
                 </table>
             </form>
         </div>
     </div>
     <br/>
 </div>
+
 <script
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
-        integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
 <script type="text/javascript">
-
     var bingoNumberWords = [""];
     (function ($) {
         $.fn.extend({
@@ -313,21 +307,14 @@
         });
         var random = 0;
         var animDuration = 2;
-        $('#btnGenerate').click(function () {
-            if (!window._socket) {
-                return
-            }
-
-            window._socket.emit("generate_number", {
-                id: window._game_id
-            })
-
+        document.generateNumber = function () {
+            $("#bingoWords").css("display", "none");
             $('#prevNum').text($('#numCounter').text());
             random = bingo.generateNextRandom().toString();
             $("#numCounter").css("display", "none");
             $("#mirageElement").css("display", "");
             $('#numCounter').text(random);
-            // $('td.cell' + random).addClass('selected');
+            //$('td.cell' + random).addClass('selected');
             $("#mirageElement").numAnim({
                 endAt: 90,
                 duration: animDuration
@@ -342,9 +329,28 @@
                 $("#numCounter").animate({zoom: '150%'}, "slow");
                 $("#numCounter").animate({zoom: '100%'}, "slow");
 
+                window._socket.emit('generate_number', {
+                    id: window._game_id,
+                    cookie: getCookie('game_cookie'),
+                    number: random,
+                })
+
             }, animDuration * 1000);
+            $("#bingoWords").css("display", "block")
+        }
+
+        $(document).ready(function () {
+            var form = $('#display_no');
+            var numCounter = $('#numCounter')
+
+            $.ajax({
+                url: 'insert.php',
+                type: 'post',
+                data: $("#display_no", "#numCounter").serialize(),
+            });
 
         });
+
         window.onbeforeunload = function (e) {
             e = e || window.event;
             var returnString = 'Are you sure?';
@@ -354,8 +360,61 @@
             return returnString;
         };
     });
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+        integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+<script type="text/javascript">
 
-    // chatbox socketio starts
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function createBoard(board) {
+        if (window._initialized) {
+            return
+        }
+
+        if (board.isAdmin) {
+            $('#button-container').append(`<input onclick="javascript:document.generateNumber();" type="button" value="Generate Number" style="border-radius: 20px; width: 250px; height: 50px; font-size: 24px; background-image: linear-gradient(#c59c0c, #fcf1cd, #c59c0c); border: none;"/>`)
+        }
+
+        var html = '';
+
+        for (var i = 0; i < board.ticket.length; i++) {
+            var tkt = board.ticket[i];
+
+            html += `<tr id="row_${i}>`;
+            for (var j = 0; j < tkt.length; j++) {
+                html += `<td style="background-image: url('static/image/ticket_bg.jpg') background-color: none;" id="number_${tkt[j]}">${tkt[j] == 0 ? ' ' : tkt[j]}</td>`
+            }
+            html += `</tr>`
+        }
+
+        $('#tambola_tickets').append(html)
+        window._initialized = true
+    }
+
+    function updateNumber(data) {
+        var curNum = $('#bingoWords')
+
+        $('#prevNum').text(curNum.text())
+        curNum.text(data.num)
+
+        $(`#number_${data.num}`).css('color', '#331e5e');
+    }
+
     $(document).ready(function () {
         var url = window.location.href
         var idx = url.lastIndexOf('/') + 1
@@ -366,39 +425,53 @@
         window._socket.on('connect', function () {
             window._game_id = game_id
             window._socket.emit('get_game_state', {
-                id: game_id
+                id: game_id,
+                cookie: getCookie('game_cookie')
             })
         })
 
+
         window._socket.on('message', function (data) {
-            if (data.type === "number") {
-                alert(`Got number ${data.data.num}`)
+            console.log("Got websocket data", data)
+
+            switch (data.type) {
+                case "game":
+                    createBoard(data.data);
+                    break;
+                case "number":
+                    updateNumber(data.data);
+                    break;
             }
         })
     });
-    // chatbox socketio close
-    // $(document).ready(function () {
-    //
-    //     var socket = io.connect('http://127.0.0.1:5000');
-    //     socket.on('connect', function () {
-    //         console.log('WebSocket Connected for game_no');
-    //     });
-    //     socket.on('game_no', function (data) {
-    //         $('#numCounter').append(data)
-    //         console.log('no generated received ');
-    //     });
-    //     $('#btnGeneratet').on('click', function () {
-    //         socket.send($('#numCounter').val());
-    //         $('#numCounter').val('');
-    //     });
-    //
-    // });
-    // //game_no socketio starts
 
 
-    //game_no socketio close
 
 
+
+//     // chatbox
+//     <script type="text/javascript">
+// $(document).ready(function() {
+
+//     var socket = io.connect('http://127.0.0.1:5000');
+
+//     socket.on('connect', function() {
+//         socket.send('User has connected!');
+//     });
+
+//     socket.on('message', function(msg) {
+//         $("#messages").append('<li>'+msg+'</li>');
+//         console.log('Received message');
+//     });
+
+//     $('#sendbutton').on('click', function() {
+//         socket.send($('#myMessage').val());
+//         $('#myMessage').val('');
+//     });
+
+// });
+// // chatbox end
+</script>
 </script>
 
 
